@@ -1,0 +1,20 @@
+function telephoneCheck(str) {
+	var res = false;
+	var formats = [
+		/^\d\d\d\d\d\d\d\d\d\d$/,			
+		/^\d\d\d-\d\d\d-\d\d\d\d/,			
+		/^\d\d\d\s\d\d\d\s\d\d\d\d/,		
+		/^\(\d\d\d\)\d\d\d-\d\d\d\d/,		
+		/^\(\d\d\d\)\s\d\d\d-\d\d\d\d/,		
+		/^1\d\d\d\d\d\d\d\d\d\d/,			
+		/^1\s\d\d\d\s\d\d\d\s\d\d\d\d/,		
+		/^1\s\d\d\d-\d\d\d-\d\d\d\d/,		
+		/^1\(\d\d\d\)\d\d\d-\d\d\d\d/,		
+		/^1\s\(\d\d\d\)\s\d\d\d-\d\d\d\d/	
+	];
+
+	res = formats.some(reg => reg.test(str));
+	
+  return res;
+}
+telephoneCheck("555-555-5555");
